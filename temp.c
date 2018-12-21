@@ -7,17 +7,19 @@ int convertToF(int);
 int main(void)
 {
 
-    float cels = get_int("What is the temp in Celsius? ");
+    int cels = get_int("What is the temp in Celsius? ");
     int fTemp = convertToF(cels);
     printf("The temp converted to Fahrenheit is %i degrees\n", fTemp);
 }
 
 int convertToF(int celsius)
 {
-    int fahrenheit = (celsius * (9 / 5)) + 32;
+    float fahrenheit = (celsius * 1.8) + 32.0;
+    int rounded = round(fahrenheit);
+
 
     if (fahrenheit != 0)
-        return round(fahrenheit);
+        return rounded;
     else
         return -1;
 }
